@@ -2,16 +2,18 @@
 <html>
 <head>
 	<title>Neuronio66</title>
-	<link href="https://fonts.googleapis.com/css?family=Cormorant+Upright|Open+Sans&display=swap" rel="stylesheet">
+	<meta charset="utf-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	
 </head>
 <body>
+	<div class="test"></div>
 	<div >
 	<img id="logo" src="logo.png">
 	<h1 id="textAction" >Em breve!</h1>
-	<p id="text">Solução em <a class="tooltip" href="#">Arte, Design
-		<span class="tooltiptext">Ilustrações, Personagens, Icones, Logos... </span></a> e 
-		<a class="tooltip" href="#">Desenvolvimento Web
-		<span class="tooltiptext">Sites, Temas Wordpress, Plugins</span></a></p>
+	<p id="text">Solução em <a class="tooltip" href="#">Arte, Design<span class="tooltiptext">Ilustrações, Personagens, Icones, Logos... </span></a> e <a class="tooltip" href="#">Desenvolvimento Web<span class="tooltiptext">Sites, Temas Wordpress, Plugins...</span></a></p>
 	</div>
 </body>
 <footer>
@@ -25,7 +27,7 @@
 	var textArray = textGet.split("");
 	
 	var efeito;
-	var textOnion = "";
+	var textOnion = '';
 	var numLast;
 	var numFirst;
 
@@ -63,21 +65,35 @@
 </script>
 
 <style type="text/css">
+	
 	*{
 		
 		font-family: 'Open Sans', sans-serif;
+	}
+	.test{
+		background-image:url('back.png');
+    	background-repeat:repeat;
+    	background-size:3%;
+    	position: absolute;
+    	top: 95%;
+		height: 5%;
+		width: 100%;
+    	opacity: 0.08;
+    	z-index: -20;
+    	position: fixed;
 	}
 	body{
 		background: #1b7f9c;
 		text-align: center;
 		padding: 0;
 		margin: 0;
-		height: 100%;
+		min-height: 600px;
+		width: 100%;
 	}
 	footer{
 		padding-top: 1%;
-		background: #196d86;
-		position: absolute;
+		background: /*#196d86*/ rgba(25, 109, 134, 0.611764705882353);
+		position: fixed;
 		top: 95%;
 		height: 4%;
 		width: 100%;
@@ -88,7 +104,7 @@
 	}
 	#logo{
 		margin: 50px; 
-		height: 200px;
+		height: 13em;
      	margin: 0 auto;
      	margin-bottom: 100px;
 	}
@@ -101,23 +117,27 @@
      	font-family: 'Cormorant Upright', serif, Calibri;
 
 	}
+	
 	#bigTitle{
 		color: #c2e63a;
 		font-size: 1em;
-
      	font-family: 'Cormorant Upright', serif, Calibri;
 	}
 	#text{
 		font-size: 1.4em;
 		color: #fff;
 		font-family: 'Open Sans', sans-serif;
-		text-align: center;
+		width: 800px;
+		height: 100px;
+		margin: 0 auto;
 	}
 	.tooltip {
 	  	position: relative;
 	  	display: inline-block;
 	  	color: #fff;
 		text-decoration: none;
+
+		font-size: 1em;
 		border-bottom: 3px dotted #c2e63a;
 	}
 	.tooltip .tooltiptext{
@@ -126,16 +146,18 @@
 		height: 150px;
 		background: #fff;
 		color: #c4c4c4;
+		font-size: 1em;
 		text-align: center;
 		padding: 5px 0;
 		padding-top: 50px;
-		border-radius: 50%;
+		border-radius: 51%;
 		display: flex;
 		overflow-y: none;
 
 		position: absolute;
   		z-index: 1;
   		left: 25%;
+  		top: 200%;
   		margin-left: -60px;
 
   		opacity: 0;
@@ -154,6 +176,55 @@
 	.tooltip:hover .tooltiptext{
 		visibility: visible;
 		opacity: 1;
+	}
+
+	@media screen and (max-width: 900px) {
+    	
+    	#text{
+		font-size: 3em;
+		color: #fff;
+		font-family: 'Open Sans', sans-serif;
+		width: 800px;
+		height: 100px;
+		margin: 0 auto;
+	}
+	#textAction{
+		font-size: 6em;
+	}
+	.tooltip .tooltiptext{
+		visibility: hidden;
+		width: 500px;
+		height: 320px;
+		background: #fff;
+		color: #c4c4c4;
+		text-align: center;
+		padding: 5% 0;
+		padding-top: 150px;
+		border-radius: 51%;
+		display: flex;
+		
+
+		position: absolute;
+  		z-index: 1;
+  		left: 25%;
+  		top: 150%;
+  		margin-left: -170px;
+
+  		opacity: 0;
+  		transition: opacity 0.3s;
+	}
+	.tooltip .tooltiptext::after {
+	  content: "";
+	  position: absolute;
+	  top: -25%;
+	  left: 50%;
+	  margin-left: -100px;
+	  border-width: 100px;
+	  border-style: solid;
+	  border-color:  transparent transparent #fff transparent;
+	}
+	}
+	
 	}
 </style>
 
