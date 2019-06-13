@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Neuronio66</title>
+	<link href="https://fonts.googleapis.com/css?family=Cormorant+Upright|Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div >
+	<img id="logo" src="logo.png">
+	<h1 id="textAction" >Em breve!</h1>
+	<p id="text">Solução em <a class="tooltip" href="#">Arte, Design
+		<span class="tooltiptext">Ilustrações, Personagens, Icones, Logos... </span></a> e 
+		<a class="tooltip" href="#">Desenvolvimento Web
+		<span class="tooltiptext">Sites, Temas Wordpress, Plugins</span></a></p>
+	</div>
+</body>
+<footer>
+	Neuronio66 - 2019
+</footer>
+</html>
+<script type="text/javascript">
+	
+	var textDom = document.getElementById("textAction");
+	var textGet = textDom.innerHTML
+	var textArray = textGet.split("");
+	
+	var efeito;
+	var textOnion = "";
+	var numLast;
+	var numFirst;
+
+
+	for (var l = textGet.length - 1; l > 0; l--) {
+		
+		console.log(l);
+		if (textArray[l] != " ") {
+			numLast = l;
+			break
+		}
+	}
+	for (var f = 0; f < textGet.length - 1; f++) {
+		
+		console.log(f);
+		if (textArray[f] != " ") {
+			numFirst = f;
+			break
+		}
+	}
+	for (var o = numFirst; o < numLast-1; o++) {
+		textOnion += textArray[o];
+
+		
+		
+	}
+
+	efeito = textOnion+"<big id='bigTitle'>"
+	+textArray[(numLast-1)]+"</big>"+"<big id='bigTitle'>"
+	+textArray[numLast]+"</big>";;
+
+	textDom.innerHTML = efeito;
+	
+
+</script>
+
+<style type="text/css">
+	*{
+		
+		font-family: 'Open Sans', sans-serif;
+	}
+	body{
+		background: #1b7f9c;
+		text-align: center;
+		padding: 0;
+		margin: 0;
+		height: 100%;
+	}
+	footer{
+		padding-top: 1%;
+		background: #196d86;
+		position: absolute;
+		top: 95%;
+		height: 4%;
+		width: 100%;
+		margin: 0;
+		color: #c4c4c4;
+		font-size: 0.8em;
+
+	}
+	#logo{
+		margin: 50px; 
+		height: 200px;
+     	margin: 0 auto;
+     	margin-bottom: 100px;
+	}
+	#textAction{
+		color: #fff;
+		width: 800px;
+     	margin: 0 auto;
+     	font-size: 2.6em;
+     	font-style: bold;
+     	font-family: 'Cormorant Upright', serif, Calibri;
+
+	}
+	#bigTitle{
+		color: #c2e63a;
+		font-size: 1em;
+
+     	font-family: 'Cormorant Upright', serif, Calibri;
+	}
+	#text{
+		font-size: 1.4em;
+		color: #fff;
+		font-family: 'Open Sans', sans-serif;
+		text-align: center;
+	}
+	.tooltip {
+	  	position: relative;
+	  	display: inline-block;
+	  	color: #fff;
+		text-decoration: none;
+		border-bottom: 3px dotted #c2e63a;
+	}
+	.tooltip .tooltiptext{
+		visibility: hidden;
+		width: 200px;
+		height: 150px;
+		background: #fff;
+		color: #c4c4c4;
+		text-align: center;
+		padding: 5px 0;
+		padding-top: 50px;
+		border-radius: 50%;
+		display: flex;
+		overflow-y: none;
+
+		position: absolute;
+  		z-index: 1;
+  		left: 25%;
+  		margin-left: -60px;
+
+  		opacity: 0;
+  		transition: opacity 0.3s;
+	}
+	.tooltip .tooltiptext::after {
+	  content: "";
+	  position: absolute;
+	  top: -18%;
+	  left: 50%;
+	  margin-left: -20px;
+	  border-width: 20px;
+	  border-style: solid;
+	  border-color:  transparent transparent #fff transparent;
+	}
+	.tooltip:hover .tooltiptext{
+		visibility: visible;
+		opacity: 1;
+	}
+</style>
+
