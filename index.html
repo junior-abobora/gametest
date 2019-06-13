@@ -4,8 +4,8 @@
 	<title>Neuronio66</title>
 	<meta charset="utf-8">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+	
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
 	
 </head>
 <body>
@@ -13,7 +13,7 @@
 	<div >
 	<img id="logo" src="logo.png">
 	<h1 id="textAction" >Em breve!</h1>
-	<p id="text">Solução em <a class="tooltip" href="#">Arte, Design<span class="tooltiptext">Ilustrações, Personagens, Icones, Logos... </span></a> e <a class="tooltip" href="#">Desenvolvimento Web<span class="tooltiptext">Sites, Temas Wordpress, Plugins...</span></a></p>
+	<p id="text">Solução em <a class="tooltip" href="#">Arte, Design<span class="tooltiptext">Ilustrações, Personagens, Icones, Logos... </span></a> e <a class="tooltip" href="#">Desenvolvimento Web<span class="tooltiptext">Sites, Temas Wordpress, Plugins Wordpress...</span></a></p>
 	</div>
 </body>
 <footer>
@@ -179,27 +179,37 @@
 	}
 
 	@media screen and (max-width: 900px) {
+		body{
+
+		}
     	
     	#text{
-		font-size: 3em;
+		font-size: 1.8em;
 		color: #fff;
 		font-family: 'Open Sans', sans-serif;
-		width: 800px;
+		width: 100%;
 		height: 100px;
 		margin: 0 auto;
 	}
+	#logo{
+		margin: 50px; 
+		height: 6.8em;
+     	margin: 0 auto;
+     	margin-bottom: 20px;
+	}
 	#textAction{
-		font-size: 6em;
+		font-size: 3.9em;
+		width: 100%;
 	}
 	.tooltip .tooltiptext{
 		visibility: hidden;
-		width: 500px;
-		height: 320px;
+		width: 220px;
+		height: 170px;
 		background: #fff;
 		color: #c4c4c4;
 		text-align: center;
-		padding: 5% 0;
-		padding-top: 150px;
+		padding: 6% 0;
+		padding-top: 40px;
 		border-radius: 51%;
 		display: flex;
 		
@@ -207,8 +217,8 @@
 		position: absolute;
   		z-index: 1;
   		left: 25%;
-  		top: 150%;
-  		margin-left: -170px;
+  		top: 125%;
+  		margin-left: -100px;
 
   		opacity: 0;
   		transition: opacity 0.3s;
@@ -218,8 +228,8 @@
 	  position: absolute;
 	  top: -25%;
 	  left: 50%;
-	  margin-left: -100px;
-	  border-width: 100px;
+	  margin-left: -50px;
+	  border-width: 50px;
 	  border-style: solid;
 	  border-color:  transparent transparent #fff transparent;
 	}
